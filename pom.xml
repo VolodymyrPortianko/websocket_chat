@@ -91,6 +91,7 @@
                     <url>http://89.252.20.218/manager/text</url>
                     <server>TomcatServer</server>
                     <path>/</path>
+                    <port>8080</port>
                 </configuration>
             </plugin>
         </plugins>

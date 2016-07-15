@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
+
+import {WelcomeComponent} from "./welcome.component";
+
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
+    template: `
+        <welcome></welcome>
+    `,
+    directives: [WelcomeComponent]
 })
 export class AppComponent { }
