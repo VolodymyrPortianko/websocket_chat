@@ -1,12 +1,8 @@
-import { Component } from '@angular/core';
-
-import {WelcomeComponent} from "./welcome.component";
+import {Component} from '@angular/core';
 
 @Component({
-    selector: 'my-app',
-    template: `
-        <welcome></welcome>
-    `,
-    directives: [WelcomeComponent]
+    selector: 'app',
+    template: `<chat></chat>`
 })
-export class AppComponent { }
+export class AppComponent {
+}
