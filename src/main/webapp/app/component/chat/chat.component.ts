@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {ChatMessage} from "../../model/chat_message.model";
+import {ChatService} from "../../service/chat.service";
 
 
 @Component({
@@ -30,6 +31,9 @@ export class ChatComponent implements OnInit {
     messageText: string = "";
     max = 140;
 
+    constructor(private _chatService: ChatService) {
+    }
+
     ngOnInit():void {
         this.messages = [{
             text: "Simple text",
@@ -39,11 +43,14 @@ export class ChatComponent implements OnInit {
             text: "Simple text2",
             time: new Date(100),
             self: true
-        },]
+        },];
+        this._chatService.getMessages().subscribe((message) => {
+            this.messages.push(message);
+        });
     }
 
     addMessage() {
-
+        this._chatService.sendMessage(this.messageText);
     }
 
 }
